@@ -20,7 +20,7 @@ public class AuthenticationService {
         User user = userRepo.findByUsername(username);
 
         if (user != null) {
-            return user.getPassword().equals(password);
+            return password.equals(user.getPassword());
         } else {
             return false;
         }
@@ -55,6 +55,17 @@ public class AuthenticationService {
         } else {
             log.warn("User does not exist");
             return false;
+        }
+    }
+
+    public User getUser(String username) {
+        User user = userRepo.findByUsername(username);
+
+        if (user != null) {
+            return user;
+        } else {
+            log.warn("User does not exist");
+            return null;
         }
     }
 }

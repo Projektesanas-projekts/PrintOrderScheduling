@@ -30,4 +30,11 @@ public class Controller {
         Boolean response = authService.createUser(username, password);
         return ResponseEntity.ok(response);
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/deleteUser")
+    public ResponseEntity<Boolean> deleteUser(@RequestParam String username) {
+        Boolean response = authService.deleteUser(username);
+        return ResponseEntity.ok(response);
+    }
 }

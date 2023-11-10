@@ -6,29 +6,31 @@ import lv.rtustudents.projektesanasprojekts.repositories.UserRepo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Slf4j
 @Service
-public class AuthenticationService {
+public class UserService {
     private final UserRepo userRepo;
 
-    AuthenticationService(UserRepo userRepo) {
+    UserService(UserRepo userRepo) {
         this.userRepo = userRepo;
     }
 
     public boolean authenticateUser(String username, String password) {
-        User user = userRepo.findByUsername(username);
+        Optional<User> user = userRepo.findByUsername(username);
 
-        if (user != null) {
-            return password.equals(user.getPassword());
+        if (user.isPresent()) {
+            return password.equals(user.get().getPassword());
         } else {
+            log.warn("USER AUTHENTICATION | User is already present");
             return false;
         }
     }
 
     public boolean createUser(String username, String password) {
-        if (userRepo.findByUsername(username) != null) {
-            log.warn("User already exists");
+        if (userRepo.findByUsername(username).isPresent()) {
+            log.warn("CREATE USER | User already exists");
             return false;
         }
 
@@ -47,10 +49,10 @@ public class AuthenticationService {
     }
 
     public boolean deleteUser(String username) {
-        User user = userRepo.findByUsername(username);
+        Optional<User> user = userRepo.findByUsername(username);
 
-        if (user != null) {
-            userRepo.delete(user);
+        if (user.isPresent()) {
+            userRepo.delete(user.get());
             return true;
         } else {
             log.warn("User does not exist");
@@ -59,10 +61,10 @@ public class AuthenticationService {
     }
 
     public User getUser(String username) {
-        User user = userRepo.findByUsername(username);
+        Optional<User> user = userRepo.findByUsername(username);
 
-        if (user != null) {
-            return user;
+        if (user.isPresent()) {
+            return user.get();
         } else {
             log.warn("User does not exist");
             return null;

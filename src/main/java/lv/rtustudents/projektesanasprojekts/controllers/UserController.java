@@ -1,7 +1,7 @@
 package lv.rtustudents.projektesanasprojekts.controllers;
 
 import lv.rtustudents.projektesanasprojekts.models.User;
-import lv.rtustudents.projektesanasprojekts.services.AuthenticationService;
+import lv.rtustudents.projektesanasprojekts.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/user")
 public class UserController {
 
-    AuthenticationService authService;
+    UserService authService;
 
-    UserController(AuthenticationService authService) {
+    UserController(UserService authService) {
         this.authService = authService;
     }
 

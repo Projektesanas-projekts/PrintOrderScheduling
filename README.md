@@ -40,3 +40,47 @@ Returns:<br>
 - User entity - success
 - Null - No such user exists
 <br><br>
+## Order actions
+### Create order
+POST - localhost:8080/api/order/create
+```java
+boolean createOrder(@RequestParam OrderDTO orderDTO);
+```
+
+Returns:<br>
+- True - success
+- False - failed, possibly already exists
+<br><br>
+### Delete order
+POST - localhost:8080/api/order/delete
+```java
+boolean deleteOrder(@RequestParam Long id);
+```
+
+Returns:<br>
+- True - success
+- False - failed, possibly doesn't exist
+<br><br>
+### Get order
+POST - localhost:8080/api/order/entity
+```java
+OrderDTO getOrder(@RequestParam Long id);
+```
+
+Returns:<br>
+- orderDTO - success
+- null - failed, possibly entity doesn't exist
+<br><br>
+## Objects
+### OrderDTO
+```java
+    private long id;
+    private Integer amount;
+    private Integer pageCount;
+    private String coverType;
+    private String bookName;
+    private String bindingType;
+    private String format;
+    private BigDecimal sizeX;
+    private BigDecimal sizeY;
+```

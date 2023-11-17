@@ -7,6 +7,8 @@ import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/order")
@@ -37,6 +39,13 @@ public class OrderController {
     @PostMapping("/entity")
     public ResponseEntity<OrderDTO> getOrder(@RequestParam Long id) {
         OrderDTO response = orderService.getOrder(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/all")
+    public ResponseEntity<List<OrderDTO>> getAllOrders() {
+        List<OrderDTO> response = orderService.getAllOrders();
         return ResponseEntity.ok(response);
     }
 }

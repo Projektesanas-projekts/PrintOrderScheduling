@@ -7,6 +7,8 @@ import lv.rtustudents.projektesanasprojekts.repositories.OrderRepo;
 import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -71,5 +73,14 @@ public class OrderService {
         }
     }
 
+    public List<OrderDTO> getAllOrders() {
+        List<OrderDTO> orderDTOs = new ArrayList<OrderDTO>();
+        List<Order> orders = orderRepo.findAll();
 
+        for (Order order : orders) {
+            orderDTOs.add(Converter.orderEntitytoDTO(order));
+        }
+
+        return orderDTOs;
+    }
 }

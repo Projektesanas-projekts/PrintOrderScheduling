@@ -1,0 +1,3 @@
+[submodule "PrintOrderScheduling.Web"]
+	path = PrintOrderScheduling.Web
+	url = git@github.com:Projektesanas-projekts/PrintOrderScheduling.Web.git

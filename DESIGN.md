@@ -1,10 +1,10 @@
-# Ievads
-## Problēmas nostādne
+# 1. Ievads
+## 1.1. Problēmas nostādne
 Izstrādājot pieeju grāmatu drukāšanas izpildei, ir nepieciešamība maksimizēt peļņu un efektivitāti, ņemot vērā dažādus faktorus, tādus kā - peļņu par vienību, grāmatu skaitu, iekārtu skaitu un veiktspēju, kā arī, resursu lietderīgu izmantošanu.
-## Darba un novērtēšanas mērķis
+## 1.2. Darba un novērtēšanas mērķis
 Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukāšanas pasūtījumu izpildē, kā arī periodiski veikt datu analīzi, lai pārliecinātos par grāmatu drukāšanas plāna atbilstošu veiktspēju uzstādītajiem darba uzdevumiem.
-# Līdzīgo risinājumu pārskats
-**Tabula ar līdzīgajiem risinājumiem**
+# 2. Līdzīgo risinājumu pārskats
+**2.1. Tabula ar līdzīgajiem risinājumiem**
 
 |   |   |   |   |   |
 |---|---|---|---|---|
@@ -12,9 +12,9 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 |   |   |   |   |   |
 |   |   |   |   |   |
 
-# Tehniskais risinājums
-## Prasību formulēšana
-### Lietotāju stāsti
+# 3. Tehniskais risinājums
+## 3.1. Prasību formulēšana
+### 3.1.1. Lietotāju stāsti
 |Nr.|Lietotāju stāsts|Prioritāte|
 |--|--|--|
 |1.|Klients vēlas pierakstīties pakalpojuma saņemšanai, jo tad viņš var saņemt gatavu produktu.|1|
@@ -26,3 +26,17 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 |7.|Uzņēmums vēlas palielināt peļņu, jo tad ir iespēja iegādāties kvalitatīvākus materiālus un tehniku.|7|
 |8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|8|
 |9.|Vadītājam ir nepieciešams saņemt informāciju par plānotajiem drukāšanas darbiem, jo ir nepieciešams saorganizēt iekārtu darbību turpmākam darbam.|4|
+## 3.2. Algoritms
+
+## 3.3. Konceptu modelis
+![svarigakie_koncepti](/images_doc/attels1.png)
+![konceptu_modelis](/images_doc/attels2.png)
+
+## 3.4. Tehnoloģiju steks
+## 3.5. Programmatūras apraksts
+
+# 4. Novērtējums
+## 4.1. Novērtēšanas plāns
+## 4.2. Novērtēšanas rezultāti
+
+# 5. Secinājumi

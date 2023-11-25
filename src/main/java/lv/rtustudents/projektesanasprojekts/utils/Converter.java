@@ -15,6 +15,7 @@ public class Converter {
         order.setFormat(orderDTO.getFormat());
         order.setSizeX(orderDTO.getSizeX());
         order.setSizeY(orderDTO.getSizeY());
+        order.setStatus(orderDTO.getStatus());
 
         return order;
     }
@@ -30,6 +31,7 @@ public class Converter {
         orderDTO.setFormat(order.getFormat());
         orderDTO.setSizeX(order.getSizeX());
         orderDTO.setSizeY(order.getSizeY());
+        orderDTO.setStatus(order.getStatus());
 
         return orderDTO;
     }

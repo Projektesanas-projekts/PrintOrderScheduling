@@ -97,4 +97,5 @@ Returns:<br>
     private String format;
     private BigDecimal sizeX;
     private BigDecimal sizeY;
+    private String status;
 ```

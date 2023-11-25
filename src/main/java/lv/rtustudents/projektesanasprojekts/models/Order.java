@@ -40,4 +40,7 @@ public class Order {
     @Column(name = "sizey")
     private BigDecimal sizeY;
 
+    @Column(name = "status")
+    private String status;
+
 }

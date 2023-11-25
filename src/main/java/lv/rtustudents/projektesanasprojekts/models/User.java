@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "Users")
 public class User {
@@ -14,18 +16,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Getter
-    @Setter
     @Column(name = "username")
     private String username;
 
-    @Getter
-    @Setter
     @Column(name = "password")
     private String password;
 
-    @Getter
-    @Setter
     @Column(name = "date_joined")
     private LocalDateTime dateJoined;
 }

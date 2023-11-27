@@ -6,17 +6,16 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 # 2. Līdzīgo risinājumu pārskats
 **2.1. Tabula ar līdzīgajiem risinājumiem**
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+|Līdzīgs risinājums|Apraksts|Priekšrocības un trūkumi|Svarīgākās iezīmes|
+|:---:|:---:|:---|:---:|
+|Katana Clound Inventory | Uzņēmuma resursu plānošanas programmatūra (Enterprise Resource Planning)  | Priekšrocības: <ul><li> Pirkuma pasūtījumu vadība, pamatojoties uz precīziem nosacījumiem/ierobežojumiem</li> <li>Ražošanas operāciju vadība</li></ul> Trūkumi: <ul><li>Nav informācijas par to, kā tieši šis programmatūras algoritmi darbojas.</li><li>Varētu būt tā, ka nav tieši saistīts ar to, ko mēs meklējām/vēlamies realizēt.</li></ul>  |  Ir algoritmi, kas palīdz veikt lēmumus peļņu maksimizēšanai (iekļaujot papildus nosacījumi). <br> Avots:[ katanamrp.com](https://katanamrp.com/)|
+|Dynamics 365 Business Central  |  Uzņēmuma resursu plānošanas programmatūra  | Priekšrocības: <ul><li>Ietver noderīgas funkcijas ražošanai, biznesa analīzei, prognozēšanai un projektu vadībai.</li> </ul>Trūkumi:<ul><li> Varētu būt tā, ka nav tieši saistīts ar to, ko mēs meklējām/vēlamies realizēt.</li></ul> | Ir algoritmi, kas palīdz veikt lēmumus peļņu maksimizēšanai (iekļaujot papildus nosacījumi).<br> Avots:[ dynamics.microsoft.com](https://dynamics.microsoft.com/en-us/business-central/overview/)|
 
 # 3. Tehniskais risinājums
 ## 3.1. Prasību formulēšana
 ### 3.1.1. Lietotāju stāsti
 |Nr.|Lietotāju stāsts|Prioritāte|
-|--|--|--|
+|:--:|--|:--:|
 |1.|Klients vēlas pierakstīties pakalpojuma saņemšanai, jo tad viņš var saņemt gatavu produktu.|1|
 |2.|Uzņēmums vēlas izvairīties no "logiem", jo tie var izraisīt zaudējumus.|5|
 |3.|Privātpersona vēlas publicēt grāmatu, jo vēlas iegūt peļņu.|9|
@@ -33,6 +32,7 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 ![konceptu_modelis](/images_doc/attels2.png)
 
 ## 3.4. Tehnoloģiju steks
+![tehnoloģiju steks](/images_doc/tehn_steks.png)
 ## 3.5. Programmatūras apraksts
 
 # 4. Novērtējums

@@ -1,7 +1,6 @@
 package lv.rtustudents.projektesanasprojekts.services;
 
 import lombok.extern.slf4j.Slf4j;
-import lv.rtustudents.projektesanasprojekts.dtos.OrderDTO;
 import lv.rtustudents.projektesanasprojekts.models.Order;
 import lv.rtustudents.projektesanasprojekts.repositories.OrderRepo;
 import lv.rtustudents.projektesanasprojekts.utils.Constants;

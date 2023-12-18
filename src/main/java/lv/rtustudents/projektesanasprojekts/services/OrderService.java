@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import lv.rtustudents.projektesanasprojekts.dtos.OrderDTO;
 import lv.rtustudents.projektesanasprojekts.models.Order;
 import lv.rtustudents.projektesanasprojekts.repositories.OrderRepo;
+import lv.rtustudents.projektesanasprojekts.utils.Constants;
 import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,11 @@ public class OrderService {
     public boolean createOrder(Order order) {
         if (order == null) {
             log.warn("CREATE ORDER | OrderDTO was null");
+            return false;
+        }
+
+        if (order.getPageCount() < Constants.MINIMUM_PAGE_COUNT) {
+            log.warn("CREATE ORDER | Page count was less than minimum");
             return false;
         }
 

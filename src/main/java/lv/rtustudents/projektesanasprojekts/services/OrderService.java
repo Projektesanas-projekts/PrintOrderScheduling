@@ -6,6 +6,7 @@ import lv.rtustudents.projektesanasprojekts.models.Order;
 import lv.rtustudents.projektesanasprojekts.repositories.OrderRepo;
 import lv.rtustudents.projektesanasprojekts.utils.Constants;
 import lv.rtustudents.projektesanasprojekts.utils.Converter;
+import lv.rtustudents.projektesanasprojekts.utils.Validator;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -88,5 +89,23 @@ public class OrderService {
         }
 
         return orderDTOs;
+    }
+
+    public boolean changeOrderStatus(Long id, String status) {
+        Optional<Order> order = orderRepo.findById(id);
+
+        if (!Validator.validateStatus(status)) {
+            log.warn("CHANGE ORDER STATUS | Status was not valid");
+            return false;
+        }
+
+        if (order.isPresent()) {
+            order.get().setStatus(status);
+            orderRepo.save(order.get());
+            return true;
+        } else {
+            log.warn("CHANGE ORDER STATUS | Order with id " + id + " is not present");
+            return false;
+        }
     }
 }

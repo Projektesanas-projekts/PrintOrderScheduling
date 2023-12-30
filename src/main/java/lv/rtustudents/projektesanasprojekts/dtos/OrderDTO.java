@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 @Setter
 public class OrderDTO {
 
-    private long id;
     private Integer amount;
     private Integer pageCount;
     private String coverType;
@@ -17,5 +16,4 @@ public class OrderDTO {
     private String format;
     private BigDecimal sizeX;
     private BigDecimal sizeY;
-    private String status;
 }

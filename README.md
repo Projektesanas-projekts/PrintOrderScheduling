@@ -84,11 +84,30 @@ Returns:<br>
 - null - failed, possibly no orders exist
 <br><br>
 
+### Change order status
+POST - localhost:8080/api/order/change/status
+```java
+Boolean changeOrderStatus(@RequestParam Long id, @RequestParam String status);
+```
+Returns:<br>
+- True - success
+- False - failed, order doesn't exist
+<br><br>
+
+### Process order
+POST - localhost:8080/api/order/process
+```java
+String processOrder();
+```
+
+Returns:<br>
+- String - success
+- null - failed, possibly no orders with status Waiting
+<br><br>
 
 ## Objects
 ### OrderDTO
 ```java
-    private long id;
     private Integer amount;
     private Integer pageCount;
     private String coverType;
@@ -97,5 +116,4 @@ Returns:<br>
     private String format;
     private BigDecimal sizeX;
     private BigDecimal sizeY;
-    private String status;
 ```

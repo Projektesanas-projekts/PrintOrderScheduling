@@ -3,10 +3,12 @@ package lv.rtustudents.projektesanasprojekts.controllers;
 import lv.rtustudents.projektesanasprojekts.dtos.OrderDTO;
 import lv.rtustudents.projektesanasprojekts.models.Order;
 import lv.rtustudents.projektesanasprojekts.services.OrderService;
+import lv.rtustudents.projektesanasprojekts.services.ProcessingService;
 import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -15,9 +17,11 @@ import java.util.List;
 public class OrderController {
 
     OrderService orderService;
+    ProcessingService processingService;
 
-    OrderController(OrderService orderService) {
+    OrderController(OrderService orderService, ProcessingService processingService) {
         this.orderService = orderService;
+        this.processingService = processingService;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -25,6 +29,13 @@ public class OrderController {
     public ResponseEntity<Boolean> createOrder(@RequestParam OrderDTO orderDTO) {
         Order order = Converter.orderDTOtoEntity(orderDTO);
         Boolean response = orderService.createOrder(order);
+        return ResponseEntity.ok(response);
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/change/status")
+    public ResponseEntity<Boolean> changeOrderStatus(@RequestParam Long id, @RequestParam String status) {
+        Boolean response = orderService.changeOrderStatus(id, status);
         return ResponseEntity.ok(response);
     }
 
@@ -46,6 +57,13 @@ public class OrderController {
     @PostMapping("/all")
     public ResponseEntity<List<OrderDTO>> getAllOrders() {
         List<OrderDTO> response = orderService.getAllOrders();
+        return ResponseEntity.ok(response);
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/process")
+    public ResponseEntity<String> processOrders() {
+        String response = processingService.process();
         return ResponseEntity.ok(response);
     }
 }

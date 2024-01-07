@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 @Setter
 public class OrderDTO {
 
+    private Long userId;
     private Integer amount;
     private Integer pageCount;
     private String coverType;

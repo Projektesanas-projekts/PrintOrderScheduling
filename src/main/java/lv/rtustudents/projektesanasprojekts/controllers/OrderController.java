@@ -26,7 +26,8 @@ public class OrderController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/create")
-    public ResponseEntity<Boolean> createOrder(@RequestBody OrderDTO orderDTO) {
+    public ResponseEntity<Boolean> createOrder(@RequestBody OrderDTO orderDTO,
+                                               @RequestParam Long userId) {
         Order order = Converter.orderDTOtoEntity(orderDTO);
         Boolean response = orderService.createOrder(order);
         return ResponseEntity.ok(response);
@@ -47,7 +48,7 @@ public class OrderController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping("/entity")
+    @GetMapping("/entity")
     public ResponseEntity<OrderDTO> getOrder(@RequestParam Long id) {
         OrderDTO response = orderService.getOrder(id);
         return ResponseEntity.ok(response);

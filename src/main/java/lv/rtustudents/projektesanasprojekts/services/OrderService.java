@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import lv.rtustudents.projektesanasprojekts.dtos.OrderDTO;
 import lv.rtustudents.projektesanasprojekts.models.Order;
 import lv.rtustudents.projektesanasprojekts.repositories.OrderRepo;
+import lv.rtustudents.projektesanasprojekts.repositories.UserRepo;
 import lv.rtustudents.projektesanasprojekts.utils.Constants;
 import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import lv.rtustudents.projektesanasprojekts.utils.Validator;
@@ -18,21 +19,15 @@ import java.util.Optional;
 public class OrderService {
 
     OrderRepo orderRepo;
+    UserRepo userRepo;
 
-    OrderService(OrderRepo orderRepo) {
+    OrderService(OrderRepo orderRepo, UserRepo userRepo) {
         this.orderRepo = orderRepo;
+        this.userRepo = userRepo;
     }
 
     public boolean createOrder(Order order) {
-        if (order == null) {
-            log.warn("CREATE ORDER | OrderDTO was null");
-            return false;
-        }
-
-        if (order.getPageCount() < Constants.MINIMUM_PAGE_COUNT) {
-            log.warn("CREATE ORDER | Page count was less than minimum");
-            return false;
-        }
+        if (!verifyOrderCreateParams(order)) return false;
 
         try {
             orderRepo.save(order);
@@ -107,5 +102,31 @@ public class OrderService {
             log.warn("CHANGE ORDER STATUS | Order with id " + id + " is not present");
             return false;
         }
+    }
+
+    public boolean verifyOrderCreateParams(Order order) {
+        if (order == null) {
+            log.warn("VERIFY ORDER PARAMS | OrderDTO was null");
+            return false;
+        }
+
+        if (order.getUserId() == null) {
+            log.warn("VERIFY ORDER PARAMS | UserId was null");
+            return false;
+        }
+
+        // Checking minimum page requirement
+        if (order.getPageCount() < Constants.MINIMUM_PAGE_COUNT) {
+            log.warn("VERIFY ORDER PARAMS | Page count was less than minimum");
+            return false;
+        }
+
+        // Check if user exists
+        if (userRepo.findById(order.getUserId()).isEmpty()) {
+            log.warn("VERIFY ORDER PARAMS | User with id " + order.getUserId() + " is not present");
+            return false;
+        }
+
+        return true;
     }
 }

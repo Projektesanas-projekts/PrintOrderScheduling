@@ -8,7 +8,6 @@ import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -26,8 +25,7 @@ public class OrderController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/create")
-    public ResponseEntity<Boolean> createOrder(@RequestBody OrderDTO orderDTO,
-                                               @RequestParam Long userId) {
+    public ResponseEntity<Boolean> createOrder(@RequestBody OrderDTO orderDTO) {
         Order order = Converter.orderDTOtoEntity(orderDTO);
         Boolean response = orderService.createOrder(order);
         return ResponseEntity.ok(response);

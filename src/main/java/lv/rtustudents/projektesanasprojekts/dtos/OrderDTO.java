@@ -17,4 +17,5 @@ public class OrderDTO {
     private String format;
     private BigDecimal sizeX;
     private BigDecimal sizeY;
+    private String status;
 }

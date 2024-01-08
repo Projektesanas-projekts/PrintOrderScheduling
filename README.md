@@ -77,7 +77,7 @@ Returns:<br>
 ### Get all orders
 POST - localhost:8080/api/order/all
 ```java
-List<OrderDTO> getAllOrders();
+List<OrderDTO> getAllOrders(@RequestParam Long userId);
 ```
 Returns:<br>
 - List of orderDTOs - success

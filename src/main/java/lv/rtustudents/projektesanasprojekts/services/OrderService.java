@@ -75,9 +75,17 @@ public class OrderService {
         }
     }
 
-    public List<OrderDTO> getAllOrders() {
+    public List<OrderDTO> getAllOrders(Long usrId) {
         List<OrderDTO> orderDTOs = new ArrayList<OrderDTO>();
-        List<Order> orders = orderRepo.findAll();
+        List<Order> orders;
+
+        if (usrId != null) {
+            orders = orderRepo.findByUserId(usrId);
+        } else {
+            orders = orderRepo.findAll();
+        }
+
+
 
         for (Order order : orders) {
             orderDTOs.add(Converter.orderEntitytoDTO(order));

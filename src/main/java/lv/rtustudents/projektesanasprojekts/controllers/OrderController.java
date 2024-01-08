@@ -8,7 +8,6 @@ import lv.rtustudents.projektesanasprojekts.utils.Converter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")

@@ -7,6 +7,7 @@ public class Converter {
     public static Order orderDTOtoEntity(OrderDTO orderDTO) {
         Order order = new Order();
 
+        order.setId(orderDTO.getId());
         order.setUserId(orderDTO.getUserId());
         order.setBookName(orderDTO.getBookName());
         order.setAmount(orderDTO.getAmount());
@@ -24,6 +25,7 @@ public class Converter {
     public static OrderDTO orderEntitytoDTO(Order order) {
         OrderDTO orderDTO = new OrderDTO();
 
+        orderDTO.setId(order.getId());
         orderDTO.setUserId(order.getUserId());
         orderDTO.setBookName(order.getBookName());
         orderDTO.setAmount(order.getAmount());

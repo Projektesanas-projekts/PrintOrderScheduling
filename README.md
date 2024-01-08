@@ -108,6 +108,7 @@ Returns:<br>
 ## Objects
 ### OrderDTO
 ```java
+    private Long userId;
     private Integer amount;
     private Integer pageCount;
     private String coverType;
@@ -116,4 +117,5 @@ Returns:<br>
     private String format;
     private BigDecimal sizeX;
     private BigDecimal sizeY;
+    private String status;
 ```

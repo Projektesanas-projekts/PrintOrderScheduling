@@ -4,11 +4,11 @@
 ### Authenticate user
 POST - localhost:8080/api/user/authenticate
 ```java
-boolean authenticate(@RequestParam String username, @RequestParam String password);
+Long authenticate(@RequestParam String username, @RequestParam String password);
 ```
 Returns:<br>
-- True - authentication succeeded
-- False - authentication failed, incorrect username or password
+- used id - authentication succeeded
+- null - authentication failed, incorrect username or password or user doesnt exist
 <br><br>
 
 ### Create user

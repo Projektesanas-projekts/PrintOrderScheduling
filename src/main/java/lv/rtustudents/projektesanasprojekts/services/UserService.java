@@ -17,14 +17,14 @@ public class UserService {
         this.userRepo = userRepo;
     }
 
-    public boolean authenticateUser(String username, String password) {
+    public Long authenticateUser(String username, String password) {
         Optional<User> user = userRepo.findByUsername(username);
 
-        if (user.isPresent()) {
-            return password.equals(user.get().getPassword());
+        if (user.isPresent() && password.equals(user.get().getPassword())) {
+            return user.get().getId();
         } else {
-            log.warn("USER AUTHENTICATION | User is already present");
-            return false;
+            log.warn("USER AUTHENTICATION | No such user exists or password not correct");
+            return null;
         }
     }
 

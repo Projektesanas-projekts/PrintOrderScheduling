@@ -18,9 +18,9 @@ public class UserController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/authenticate")
-    public ResponseEntity<Boolean> authenticate(@RequestParam String username,
+    public ResponseEntity<Long> authenticate(@RequestParam String username,
                                                 @RequestParam String password) {
-        Boolean response = authService.authenticateUser(username, password);
+        Long response = authService.authenticateUser(username, password);
         return ResponseEntity.ok(response);
     }
 

@@ -29,19 +29,26 @@ public class ProcessingService {
         log.info("PROCESS ORDERS | Processing started");
         List<Order> orders = orderRepo.findAllByStatus(Constants.STATUS_WAITING);
 
-//        if (orders.isEmpty()) {
-//            log.warn("PROCESS ORDERS | No orders in waiting status");
-//            return null;
-//        }
+        if (orders.isEmpty()) {
+            log.warn("PROCESS ORDERS | No orders in waiting status");
+            return null;
+        }
+
+        Integer orderCount = orders.size();
 
         // TODO: Algorithm to maximize profit using orders and machinery prices
-        LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {3, 5}, 0);
+        LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {orderCount, 5}, 0);
 
         // Define the constraints
         Collection<LinearConstraint> constraints = new ArrayList<LinearConstraint>();
-        constraints.add(new LinearConstraint(new double[] {2, 1}, Relationship.LEQ, 6));
-        constraints.add(new LinearConstraint(new double[] {1, 2}, Relationship.LEQ, 8));
-        constraints.add(new LinearConstraint(new double[] {1, 1}, Relationship.GEQ, 0));
+
+        for (Order order : orders) {
+            constraints.add(new LinearConstraint(new double[] {order.getPageCount(), 1}, Relationship.LEQ, order.getAmount()));
+        }
+
+//        constraints.add(new LinearConstraint(new double[] {2, 1}, Relationship.LEQ, 6));
+//        constraints.add(new LinearConstraint(new double[] {1, 2}, Relationship.LEQ, 8));
+//        constraints.add(new LinearConstraint(new double[] {1, 1}, Relationship.GEQ, 0));
 
         OptimizationData[] optData = new OptimizationData[] {GoalType.MAXIMIZE, f, new LinearConstraintSet(constraints)};
 

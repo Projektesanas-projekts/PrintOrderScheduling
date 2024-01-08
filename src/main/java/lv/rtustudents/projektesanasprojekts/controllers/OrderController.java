@@ -55,8 +55,8 @@ public class OrderController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping("/all")
-    public ResponseEntity<List<OrderDTO>> getAllOrders() {
+    @GetMapping("/all")
+    public ResponseEntity<List<OrderDTO>> getAllOrders(@RequestParam Long id) {
         List<OrderDTO> response = orderService.getAllOrders();
         return ResponseEntity.ok(response);
     }

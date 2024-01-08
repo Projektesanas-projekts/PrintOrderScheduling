@@ -29,7 +29,7 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 
 ## 3.3. Konceptu modelis
 ![svarigakie_koncepti](/images_doc/attels1_updated.png)
-![konceptu_modelis](/images_doc/Konceptu_modelis_v2.jpg)
+![konceptu_modelis](/images_doc/Konceptu_modelis_final.png)
 
 ## 3.4. Tehnoloģiju steks
 ![tehnoloģiju steks](/images_doc/tehn_steks.png)

@@ -47,4 +47,12 @@ public class Order {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "cuttingTimePer")
+    private Float cuttingTimePer;
+
+    @Column(name = "bindingTimePer")
+    private Float bindingTimePer;
+
+    @Column(name = "coveringTimePer")
+    private Float coveringTimePer;
 }

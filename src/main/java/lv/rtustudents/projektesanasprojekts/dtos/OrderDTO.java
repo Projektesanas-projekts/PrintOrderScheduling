@@ -1,4 +1,5 @@
 package lv.rtustudents.projektesanasprojekts.dtos;
+import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,4 +20,7 @@ public class OrderDTO {
     private BigDecimal sizeX;
     private BigDecimal sizeY;
     private String status;
+    private Float cuttingTimePer;
+    private Float bindingTimePer;
+    private Float coveringTimePer;
 }

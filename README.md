@@ -118,4 +118,7 @@ Returns:<br>
     private BigDecimal sizeX;
     private BigDecimal sizeY;
     private String status;
+    private Float cuttingTimePer;
+    private Float bindingTimePer;
+    private Float coveringTimePer;
 ```

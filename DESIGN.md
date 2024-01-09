@@ -1,3 +1,4 @@
+
 # 1. Ievads
 ## 1.1. Problēmas nostādne
 Izstrādājot pieeju grāmatu drukāšanas izpildei, ir nepieciešamība maksimizēt peļņu un efektivitāti, ņemot vērā dažādus faktorus, tādus kā - peļņu par vienību, grāmatu skaitu, iekārtu skaitu un veiktspēju, kā arī, resursu lietderīgu izmantošanu.
@@ -6,11 +7,11 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 # 2. Līdzīgo risinājumu pārskats
 **2.1. Tabula ar līdzīgajiem risinājumiem**
 
-|Līdzīgs risinājums|Apraksts|Priekšrocības un trūkumi|Svarīgākās iezīmes|
+|Līdzīgs risinājums|Apraksts|Priekšrocības un trūkumi|Svarīgas iezīmes/informācijas avoti|
 |:---:|:---:|:---|:---:|
 |Katana Clound Inventory | Uzņēmuma resursu plānošanas programmatūra (Enterprise Resource Planning)  | Priekšrocības: <ul><li> Pirkuma pasūtījumu vadība, pamatojoties uz precīziem nosacījumiem/ierobežojumiem</li> <li>Ražošanas operāciju vadība</li></ul> Trūkumi: <ul><li>Nav informācijas par to, kā tieši šis programmatūras algoritmi darbojas.</li><li>Varētu būt tā, ka nav tieši saistīts ar to, ko mēs meklējām/vēlamies realizēt.</li></ul>  |  Ir algoritmi, kas palīdz veikt lēmumus peļņu maksimizēšanai (iekļaujot papildus nosacījumi). <br> Avots:[ katanamrp.com](https://katanamrp.com/)|
 |Dynamics 365 Business Central  |  Uzņēmuma resursu plānošanas programmatūra  | Priekšrocības: <ul><li>Ietver noderīgas funkcijas ražošanai, biznesa analīzei, prognozēšanai un projektu vadībai.</li> </ul>Trūkumi:<ul><li> Varētu būt tā, ka nav tieši saistīts ar to, ko mēs meklējām/vēlamies realizēt.</li></ul> | Ir algoritmi, kas palīdz veikt lēmumus peļņu maksimizēšanai (iekļaujot papildus nosacījumi).<br> Avots:[ dynamics.microsoft.com](https://dynamics.microsoft.com/en-us/business-central/overview/)|
-
+|Jelgavas tipogrāfija|Tipogrāfijas uzņēmums|Priekšrocības: <ul><li>Dažāda veida sējumu drukas piedāvājums</li><li>Pieejama failu sagatavošanas pamācība</li><li>Pieejama piegāde</li><li>Videi draudzīga tipogrāfija</li><li>Failus var iesūtīt tipogrāfijas mājaslapā</li></ul>|Ir pieejams vizuālais attēls ar pirmsapstrādes, drukas un pēcapstrādes laikā izmantojamām ierīcēm, kā arī to visu var apskatīt 360 grādos. <br>Avots:[Jelgavas tipogrāfija](https://jt.lv/)|
 # 3. Tehniskais risinājums
 ## 3.1. Prasību formulēšana
 ### 3.1.1. Lietotāju stāsti

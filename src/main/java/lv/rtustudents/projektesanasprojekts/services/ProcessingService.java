@@ -42,16 +42,18 @@ public class ProcessingService {
 
         // Define the constraints
         Collection<LinearConstraint> constraints = new ArrayList<>();
-        Double[] objectiveFunctionArray = new Double[orderCount];
+        double[] objectiveFunctionArray = new double[orderCount];
 
         for (Order order : orders) {
             Float pricePerBook = createPricePerBook(order);
-            System.out.println(pricePerBook);
+            objectiveFunctionArray[orders.indexOf(order)] = Double.valueOf(pricePerBook);
+            System.out.println("Price per book: " + pricePerBook);
             order.setStatus(Constants.STATUS_COMPLETE);
-            constraints.add(new LinearConstraint(new double[] {order.getPageCount(), 1}, Relationship.LEQ, order.getAmount()));
+            constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
+            order.getBindingTimePer();
         }
 
-        LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {orderCount, 5}, 0);
+        LinearObjectiveFunction f = new LinearObjectiveFunction(objectiveFunctionArray, 0);
 
 //        constraints.add(new LinearConstraint(new double[] {2, 1}, Relationship.LEQ, 6));
 //        constraints.add(new LinearConstraint(new double[] {1, 2}, Relationship.LEQ, 8));

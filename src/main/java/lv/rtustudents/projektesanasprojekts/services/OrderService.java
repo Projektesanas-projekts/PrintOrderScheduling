@@ -85,8 +85,6 @@ public class OrderService {
             orders = orderRepo.findAll();
         }
 
-
-
         for (Order order : orders) {
             orderDTOs.add(Converter.orderEntitytoDTO(order));
         }

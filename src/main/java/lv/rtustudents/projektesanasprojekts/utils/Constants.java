@@ -26,5 +26,5 @@ public class Constants {
     // Order statuses
     public static final String STATUS_WAITING = "Waiting";
     public static final String STATUS_COMPLETE = "Complete";
-    public static final String STATUS_FAILED = "Failed";
+    public static final String STATUS_FAILED = "Declined";
 }

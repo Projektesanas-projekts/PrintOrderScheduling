@@ -11,7 +11,7 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 |:---:|:---:|:---|:---:|
 |Katana Clound Inventory | Uzņēmuma resursu plānošanas programmatūra (Enterprise Resource Planning)  | Priekšrocības: <ul><li> Pirkuma pasūtījumu vadība, pamatojoties uz precīziem nosacījumiem/ierobežojumiem</li> <li>Ražošanas operāciju vadība</li></ul> Trūkumi: <ul><li>Nav informācijas par to, kā tieši šis programmatūras algoritmi darbojas.</li><li>Varētu būt tā, ka nav tieši saistīts ar to, ko mēs meklējām/vēlamies realizēt.</li></ul>  |  Ir algoritmi, kas palīdz veikt lēmumus peļņu maksimizēšanai (iekļaujot papildus nosacījumi). <br> Avots:[ katanamrp.com](https://katanamrp.com/)|
 |Dynamics 365 Business Central  |  Uzņēmuma resursu plānošanas programmatūra  | Priekšrocības: <ul><li>Ietver noderīgas funkcijas ražošanai, biznesa analīzei, prognozēšanai un projektu vadībai.</li> </ul>Trūkumi:<ul><li> Varētu būt tā, ka nav tieši saistīts ar to, ko mēs meklējām/vēlamies realizēt.</li></ul> | Ir algoritmi, kas palīdz veikt lēmumus peļņu maksimizēšanai (iekļaujot papildus nosacījumi).<br> Avots:[ dynamics.microsoft.com](https://dynamics.microsoft.com/en-us/business-central/overview/)|
-|Jelgavas tipogrāfija|Tipogrāfijas uzņēmums|Priekšrocības: <ul><li>Dažāda veida sējumu drukas piedāvājums</li><li>Pieejama failu sagatavošanas pamācība</li><li>Pieejama piegāde</li><li>Videi draudzīga tipogrāfija</li><li>Failus var iesūtīt tipogrāfijas mājaslapā</li></ul>|Ir pieejams vizuālais attēls ar pirmsapstrādes, drukas un pēcapstrādes laikā izmantojamām ierīcēm, kā arī to visu var apskatīt 360 grādos. <br>Avots:[Jelgavas tipogrāfija](https://jt.lv/)|
+|Jelgavas tipogrāfija|Tipogrāfijas uzņēmums|Priekšrocības: <ul><li>Dažāda veida sējumu drukas piedāvājums</li><li>Pieejama failu sagatavošanas pamācība</li><li>Pieejama piegāde</li><li>Videi draudzīga tipogrāfija</li><li>Failus var iesūtīt tipogrāfijas mājaslapā</li></ul>Trūkumi:<ul><li>Nav pieejama informācija par izmaksām pirms pasūtījuma veikšanas</li></ul>| Klientam ir iespēja norādīt sējuma veidu, bloka izmēru un tirāžu, kā arī grāmatas specifikācijas, bet nav redzama informācija par izmaksām. <br>Avots:[Jelgavas tipogrāfija](https://jt.lv/)|
 # 3. Tehniskais risinājums
 ## 3.1. Prasību formulēšana
 ### 3.1.1. Lietotāju stāsti
@@ -38,6 +38,14 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 
 # 4. Novērtējums
 ## 4.1. Novērtēšanas plāns
+### Mērķis
+
+### Ieejas mainīgie
+
+### Novērtēšanas mēri
+
+### Eksperimenta plāns un rezultāti
+
 ## 4.2. Novērtēšanas rezultāti
 
 # 5. Secinājumi

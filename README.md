@@ -86,8 +86,9 @@ Returns:<br>
 
 ### Change order status
 POST - localhost:8080/api/order/change/status
+
 ```java
-Boolean changeOrderStatus(@RequestParam Long id, @RequestParam String status);
+Boolean changeOrderStatus(@RequestParam Long id, @RequestParam String status, @RequestParam(required = false) String notes);
 ```
 Returns:<br>
 - True - success
@@ -121,4 +122,5 @@ Returns:<br>
     private Float cuttingTimePer;
     private Float bindingTimePer;
     private Float coveringTimePer;
+    private String notes;
 ```

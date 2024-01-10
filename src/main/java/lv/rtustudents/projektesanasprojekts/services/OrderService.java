@@ -94,7 +94,7 @@ public class OrderService {
         return orderDTOs;
     }
 
-    public boolean changeOrderStatus(Long id, String status) {
+    public boolean changeOrderStatus(Long id, String status, String notes) {
         Optional<Order> order = orderRepo.findById(id);
 
         if (!Validator.validateStatus(status)) {
@@ -103,6 +103,7 @@ public class OrderService {
         }
 
         if (order.isPresent()) {
+            if (notes != null) order.get().setNotes(notes);
             order.get().setStatus(status);
             orderRepo.save(order.get());
             return true;

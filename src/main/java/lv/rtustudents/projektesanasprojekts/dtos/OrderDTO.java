@@ -23,4 +23,5 @@ public class OrderDTO {
     private Float cuttingTimePer;
     private Float bindingTimePer;
     private Float coveringTimePer;
+    private String notes;
 }

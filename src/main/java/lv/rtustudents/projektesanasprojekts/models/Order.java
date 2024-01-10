@@ -55,4 +55,7 @@ public class Order {
 
     @Column(name = "coveringTimePer")
     private Float coveringTimePer;
+
+    @Column(name = "notes")
+    private String notes;
 }

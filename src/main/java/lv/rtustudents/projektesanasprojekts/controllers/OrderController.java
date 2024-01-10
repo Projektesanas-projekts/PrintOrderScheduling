@@ -33,8 +33,10 @@ public class OrderController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/change/status")
-    public ResponseEntity<Boolean> changeOrderStatus(@RequestParam Long id, @RequestParam String status) {
-        Boolean response = orderService.changeOrderStatus(id, status);
+    public ResponseEntity<Boolean> changeOrderStatus(@RequestParam Long id,
+                                                     @RequestParam String status,
+                                                     @RequestParam(required = false) String notes) {
+        Boolean response = orderService.changeOrderStatus(id, status, notes);
         return ResponseEntity.ok(response);
     }
 

@@ -42,20 +42,38 @@ public class ProcessingService {
 
         // Define the constraints
         Collection<LinearConstraint> constraints = new ArrayList<>();
+        Collection<Float> allpricePerBook = new ArrayList<>();
+        Collection<Float> all_binding_Time = new ArrayList<>();
+        Collection<Float> all_covering_Time = new ArrayList<>();
+        Collection<Float> all_cutting_Time = new ArrayList<>();
+
         Double[] objectiveFunctionArray = new Double[orderCount];
 
         for (Order order : orders) {
             Float pricePerBook = createPricePerBook(order);
             System.out.println(pricePerBook);
             order.setStatus(Constants.STATUS_COMPLETE);
-            constraints.add(new LinearConstraint(new double[] {order.getPageCount(), 1}, Relationship.LEQ, order.getAmount()));
+            allpricePerBook.add(pricePerBook);
+            all_binding_Time.add(order.getBindingTimePer());
+            all_covering_Time.add(order.getCoveringTimePer());
+            all_cutting_Time.add(order.getCuttingTimePer());
+
+            constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
         }
 
-        LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {orderCount, 5}, 0);
 
-//        constraints.add(new LinearConstraint(new double[] {2, 1}, Relationship.LEQ, 6));
-//        constraints.add(new LinearConstraint(new double[] {1, 2}, Relationship.LEQ, 8));
-//        constraints.add(new LinearConstraint(new double[] {1, 1}, Relationship.GEQ, 0));
+        double[] all_binding_TimeArray = all_binding_Time.stream().mapToDouble(Float::doubleValue).toArray();
+        constraints.add(new LinearConstraint(all_binding_TimeArray, Relationship.LEQ, 960));
+
+        double[] all_covering_TimeArray = all_covering_Time.stream().mapToDouble(Float::doubleValue).toArray();
+        constraints.add(new LinearConstraint(all_covering_TimeArray, Relationship.LEQ, 960));
+
+        double[] all_cutting_TimeArray = all_cutting_Time.stream().mapToDouble(Float::doubleValue).toArray();
+        constraints.add(new LinearConstraint(all_cutting_TimeArray, Relationship.LEQ, 960));
+
+        double[] allpricePerBookArray = allpricePerBook.stream().mapToDouble(Float::doubleValue).toArray();
+        LinearObjectiveFunction f = new LinearObjectiveFunction(allpricePerBookArray, 0);
+
 
         OptimizationData[] optData = new OptimizationData[] {GoalType.MAXIMIZE, f, new LinearConstraintSet(constraints)};
 
@@ -69,6 +87,11 @@ public class ProcessingService {
         log.info("Processing finished");
         return Arrays.toString(solution.getPoint());
     }
+
+
+
+
+
 
     private Float createPricePerBook(Order order) {
         Price prices = priceRepo.findById(1L).get();
@@ -91,4 +114,57 @@ public class ProcessingService {
 
         return pricePerBook;
     }
+
+
+
+    /* m  = count of columns
+    for(int j=0; j<m; j++)
+    {
+        double[] v = new double[n*m];
+        for(int i=0; i<n; i++)
+            v[i*n + j] = 1;
+        constraints.add(new LinearConstraint(v, Relationship.LEQ, 1));
+    }
+
+    // n = count of rows
+    for(int i=0; i<n; i++)
+    {
+        double[] v = new double[n*m];
+        for(int j=0; j<m; j++)
+            v[i*n + j] = A[i][j];
+        constraints.add(new LinearConstraint(v, Relationship.LEQ, L));
+    }
+    double[] objectiveCoefficients = new double[n * m];
+    Arrays.fill(objectiveCoefficients, 1.0);
+    LinearObjectiveFunction objective = LinearObjectiveFunction(objectiveCoefficients, 0);
+    LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {orderCount, 5}, 0);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

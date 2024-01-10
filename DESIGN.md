@@ -38,6 +38,7 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 
 # 4. Novērtējums
 ## 4.1. Novērtēšanas plāns
+
 ### Mērķis
 
 ### Ieejas mainīgie

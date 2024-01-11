@@ -105,7 +105,7 @@ public class ProcessingService {
         log.info("Solution: " + Arrays.toString(solverSolution));
 
         log.info("Processing finished");
-        return Arrays.toString(solution.getPoint());
+        return Arrays.toString(solverSolution);
     }
 
 

@@ -97,7 +97,7 @@ Priekš back-end tika izmantots <b>spring boot</b>, kuram papildus tika pievieno
 |3.|1999|29985|9.03|
 
 <b>Rezultātu apstrāde</b>:
-Pēc mūsu apstrādes ātruma veiktajiem testiem ar dažādu pasūtījumu daudzumiem, var novērot to ka izpildes ātrums īpaši nemainās un pat ja mainās, tad tas ir kļūdas robežās. No šī ir iespējams secināt to ka lielāko daļu šī laika tiek pavadīts savienojumu izveidē un citās lietās, kas nav tieši saistītas ar algoritma izpildi. Protams, drošvien pie vel daudz lielākiem pasūtījumu skaitiem šis laiks var pagarināties, bet tad jau tas vairs nebūs reprezentatīvi pret to kādi pasūtījumi notiktu īstajā dzīve.
+Pēc mūsu apstrādes ātruma veiktajiem testiem ar dažādu pasūtījumu daudzumiem, var novērot to ka izpildes ātrums īpaši nemainās un pat ja mainās, tad tas ir kļūdas robežās. No šī ir iespējams secināt to ka lielāko daļu šī laika tiek pavadīts savienojumu izveidē un citās lietās, kas nav tieši saistītas ar algoritma izpildi. Protams, drošvien pie vēl daudz lielākiem pasūtījumu skaitiem šis laiks var pagarināties, bet tad jau tas vairs nebūs reprezentatīvi pret to kādi pasūtījumi notiktu īstajā dzīve.
 
 
 # 5. Secinājumi

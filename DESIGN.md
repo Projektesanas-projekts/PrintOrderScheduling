@@ -73,18 +73,32 @@ B N <= W;
 ![tehnoloģiju steks](/images_doc/tehn_steks.png)
 ## 3.5. Programmatūras apraksts
 
+Priekš back-end tika izmantots <b>spring boot</b>, kuram papildus tika pievienotas 2 bibliotēkas lai atvieglotu projekta izstrādi - <b>json</b> un <b>apache math3</b>, bet front-end izmantojām <b>angular</b>, kuram palīdzībā nāca <b>bootstrap</b> un <b>RxJs</b> bibliotēkas. Datubāzei izmantojam <b>Mysql</b>. Tehnisku iemeslu dēļ neizdevās uzstādīt angular uz servera, bet toties izdevās ar spring boot un datubāzi.
+
+<b>Json</b> - izmantojām, lai apstrādātu json strings un atvieglotu datu ievietošanu tajos pirms padošanas uz front-end.</br>
+<b>Apache math3</b> - pildija pamata maksimizācijas algoritma funckijas.</br>
+<b>Bootstrap</b> - izmantota lai labāk optimizētu izkārtojumu un vizuālo izskatu, kas nopietni ietaupija laiku izstrādes laikā.</br>
+<b>RxJs</b> - izmantojām lai veiktu asinhrono pieprasījumu apstrādi.
+
 # 4. Novērtējums
-## 4.1. Novērtēšanas plāns
+## 4.1. Novērtēšanas plāns un rezultāti
+### Gaidīšanas laiks priekš grāmatu printēšanas
+<ul>
+<li><b>Mērķis</b>: Pārbaudīt algoritma darbības ilgumu atkarībā no datu apjoma.</li> 
+<li><b>Ieejas mainīgie</b>: Pasūtījuma izmērs (509, 999, 1999).</li>
+<li><b>Novērtēšanas mēri</b>: Kopējais vērtību daudzums plānā. </li>
+<li><b>Eksperimenta plāns un rezultāti</b>: </li>
+</ul>
 
-### Mērķis
+|Nr.|Pasūtījuma izmērs (N)|Kopējais vērtību daudzums plānā|W(sekundēs)|
+|:--:|:--:|:--:|:--:|
+|1.|509|7635|9.24|
+|2.|999|14985|9.31|
+|3.|1999|29985|9.03|
 
-### Ieejas mainīgie
+<b>Rezultātu apstrāde</b>:
+Pēc mūsu apstrādes ātruma veiktajiem testiem ar dažādu pasūtījumu daudzumiem, var novērot to ka izpildes ātrums īpaši nemainās un pat ja mainās, tad tas ir kļūdas robežās. No šī ir iespējams secināt to ka lielāko daļu šī laika tiek pavadīts savienojumu izveidē un citās lietās, kas nav tieši saistītas ar algoritma izpildi. Protams, drošvien pie vel daudz lielākiem pasūtījumu skaitiem šis laiks var pagarināties, bet tad jau tas vairs nebūs reprezentatīvi pret to kādi pasūtījumi notiktu īstajā dzīve.
 
-### Novērtēšanas mēri
-
-### Eksperimenta plāns un rezultāti
-
-## 4.2. Novērtēšanas rezultāti
 
 # 5. Secinājumi
 ## Prasību izpildes kontrolsaraksts
@@ -100,7 +114,10 @@ B N <= W;
 |8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|Nē|Pašlaik mājaslapa tikai angļu valodā|
 |9.|Privātpersona vēlas publicēt grāmatu, jo vēlas iegūt peļņu.|Jā|Privātpersonām ir pieejami grāmatu drukāšanas pakalpojumi|
 
-# Katra grupas dalībnieka veikums
+Neskatoties uz to ka bija daudz darba veidojot dažādas funkcionalitātes front-end un back-end, tomēr visgrūtākais bija realizēt maksimizācijas algoritmu, jo bija problēmas sākumā ne tikai ar loģikas izprašanu, bet arī problēmas ar pašu bibliotēku, kas būtiski pagarināja projekta izstrādes gaitu.
+Lai saprastu, kā tas darbojas, mēs paļāvāmies uz ziņu, kas 2013. gadā tika dokumentēta kādā nejaušā ziņojumapmaiņas programmā.
+Tas tika atrasts, pateicoties lietotājam, kurš tolaik rakstīja StackOverflow.# Katra grupas dalībnieka veikums
+
 |Dalībnieks|Paveiktais darbs|
 |:---:|:---|
 |Ņikita|Front-end (html, css, angular)|

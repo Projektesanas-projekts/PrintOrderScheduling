@@ -42,7 +42,6 @@ public class ProcessingService {
         Integer orderCount = orders.size();
         JSONObject result = new JSONObject();
 
-        // Define the constraints
         Collection<LinearConstraint> constraints = new ArrayList<>();
         Collection<Float> allpricePerBook = new ArrayList<>();
         Collection<Float> all_binding_Time = new ArrayList<>();
@@ -52,12 +51,11 @@ public class ProcessingService {
         for (Order order : orders) {
             Float pricePerBook = createPricePerBook(order);
             System.out.println(pricePerBook);
+
             allpricePerBook.add(pricePerBook);
             all_binding_Time.add(order.getBindingTimePer());
             all_covering_Time.add(order.getCoveringTimePer());
             all_cutting_Time.add(order.getCuttingTimePer());
-
-            //constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
 
             result.put(String.valueOf(order.getId()), new JSONObject().put("pricePerBook", pricePerBook).put("solution", -1));
         }
@@ -88,11 +86,9 @@ public class ProcessingService {
         OptimizationData[] optData = new OptimizationData[] {GoalType.MAXIMIZE, f, new LinearConstraintSet(constraints), new
                 NonNegativeConstraint(true)};
 
-        // Create and run the solver
         SimplexSolver solver = new SimplexSolver();
         PointValuePair solution = solver.optimize(optData);
 
-        //double[] getSolution = new double[orderCount];
         double[] solverSolution = solution.getPoint();
 
         for (int i = 0; i < orders.size(); i++){
@@ -101,15 +97,11 @@ public class ProcessingService {
             obj.put("solution", solverSolution[i]);
 
             if (solverSolution[i] > 0) {
-                log.info("IF Solution for order " + order.getId() + ": " + solverSolution[i]);
                 order.setStatus(Constants.STATUS_COMPLETE);
                 orderRepo.save(order);
-            } else {
-                log.info("ELSE Solution for order " + order.getId() + ": " + solverSolution[i]);
             }
         }
 
-        // Print the solution
         log.info("Solution: " + Arrays.toString(solverSolution));
 
         log.info("Processing finished");

@@ -58,19 +58,19 @@ public class ProcessingService {
             all_covering_Time.add(order.getCoveringTimePer());
             all_cutting_Time.add(order.getCuttingTimePer());
 
-            constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
+            //constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
         }
 
-        /*for (int i = 0; i < orders.size(); i++) {
+        for (int i = 0; i < orders.size(); i++) {
             Order order = orders.get(i);
 
             double[] coefficients = new double[orderCount];
             Arrays.fill(coefficients,0);
             coefficients[i] = 1;  // Set the coefficient for the current book to 1
-
+            //log.info(Arrays.toString(coefficients));
             // Add the constraint for the current book
             constraints.add(new LinearConstraint(coefficients, Relationship.LEQ, order.getAmount()));
-        }*/
+        }
 
 
         double[] all_binding_TimeArray = all_binding_Time.stream().mapToDouble(Float::doubleValue).toArray();
@@ -93,8 +93,16 @@ public class ProcessingService {
         SimplexSolver solver = new SimplexSolver();
         PointValuePair solution = solver.optimize(optData);
 
+        //double[] getSolution = new double[orderCount];
+        double[] solverSolution = solution.getPoint();
+
+        for (int i = 0; i < solverSolution.length; i++){
+            Order order = orders.get(i);
+            solverSolution[i] = solverSolution[i] * order.getAmount();
+        }
+
         // Print the solution
-        log.info("Solution: " + Arrays.toString(solution.getPoint()));
+        log.info("Solution: " + Arrays.toString(solverSolution));
 
         log.info("Processing finished");
         return Arrays.toString(solution.getPoint());

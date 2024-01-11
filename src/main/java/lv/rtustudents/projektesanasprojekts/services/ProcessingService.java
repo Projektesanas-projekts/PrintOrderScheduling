@@ -107,9 +107,6 @@ public class ProcessingService {
             if (solverSolution[i] > 0) {
                 order.setStatus(Constants.STATUS_COMPLETE);
                 orderRepo.save(order);
-            } else {
-                order.setStatus(Constants.STATUS_FAILED);
-                orderRepo.save(order);
             }
         }
 

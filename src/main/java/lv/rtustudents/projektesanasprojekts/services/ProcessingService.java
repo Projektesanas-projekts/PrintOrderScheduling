@@ -100,11 +100,17 @@ public class ProcessingService {
 
         for (int i = 0; i < solverSolution.length; i++){
             Order order = orders.get(i);
-            order.setStatus(Constants.STATUS_COMPLETE);
-            orderRepo.save(order);
 //            solverSolution[i] = solverSolution[i] * order.getAmount();
             JSONObject obj = (JSONObject) result.get(String.valueOf(order.getId()));
             obj.put("solution", solverSolution[i]);
+
+            if (solverSolution[i] > 0) {
+                order.setStatus(Constants.STATUS_COMPLETE);
+                orderRepo.save(order);
+            } else {
+                order.setStatus(Constants.STATUS_FAILED);
+                orderRepo.save(order);
+            }
         }
 
         // Print the solution

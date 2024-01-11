@@ -51,6 +51,20 @@ UNTIL all orders are processed
    output result
 END MAINPROGRAM
 ```
+### Peļņas maksimizācija
+```
+Maximize Profit = X * B1 + Y * B2 + ... + M * Book N
+
+Restrictions: 
+Cutting  = a * B1 + b * B2 + ... + J * B N <= 16 h;
+Binding  = c * B1 + d * B2 + ... + k * B N <= 16 h;
+Covering = e * B1 + f * B2 + ... + p * B N <= 16 h;
+
+B1 <= 233;
+B2 <= 114;
+B3 <= 144;
+B N <= W;
+```
 ## 3.3. Konceptu modelis
 ![svarigakie_koncepti](/images_doc/attels1_updated.png)
 ![konceptu_modelis](/images_doc/Konceptu_modelis_final.png)

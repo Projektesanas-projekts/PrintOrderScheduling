@@ -76,13 +76,13 @@ public class ProcessingService {
 
 
         double[] all_binding_TimeArray = all_binding_Time.stream().mapToDouble(Float::doubleValue).toArray();
-        constraints.add(new LinearConstraint(all_binding_TimeArray, Relationship.LEQ, 960));
+        constraints.add(new LinearConstraint(all_binding_TimeArray, Relationship.LEQ, 57600));
 
         double[] all_covering_TimeArray = all_covering_Time.stream().mapToDouble(Float::doubleValue).toArray();
-        constraints.add(new LinearConstraint(all_covering_TimeArray, Relationship.LEQ, 960));
+        constraints.add(new LinearConstraint(all_covering_TimeArray, Relationship.LEQ, 57600));
 
         double[] all_cutting_TimeArray = all_cutting_Time.stream().mapToDouble(Float::doubleValue).toArray();
-        constraints.add(new LinearConstraint(all_cutting_TimeArray, Relationship.LEQ, 960));
+        constraints.add(new LinearConstraint(all_cutting_TimeArray, Relationship.LEQ, 57600));
 
         double[] allpricePerBookArray = allpricePerBook.stream().mapToDouble(Float::doubleValue).toArray();
         LinearObjectiveFunction f = new LinearObjectiveFunction(allpricePerBookArray, 0);
@@ -102,10 +102,9 @@ public class ProcessingService {
             Order order = orders.get(i);
             order.setStatus(Constants.STATUS_COMPLETE);
             orderRepo.save(order);
-            solverSolution[i] = solverSolution[i] * order.getAmount();
+//            solverSolution[i] = solverSolution[i] * order.getAmount();
             JSONObject obj = (JSONObject) result.get(String.valueOf(order.getId()));
             obj.put("solution", solverSolution[i]);
-
         }
 
         // Print the solution
@@ -115,9 +114,6 @@ public class ProcessingService {
         log.info(result.toString());
         return result.toString();
     }
-
-
-
 
     private Float createPricePerBook(Order order) {
         Price prices = priceRepo.findById(1L).get();

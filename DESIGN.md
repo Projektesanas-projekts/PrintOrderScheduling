@@ -50,3 +50,15 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 ## 4.2. Novērtēšanas rezultāti
 
 # 5. Secinājumi
+
+# Katra grupas dalībnieka veikums
+|Dalībnieks|Paveiktais darbs|
+|:---:|:---|
+|Ņikita|Front-end (html, css, angular)|
+|Kristiāns|Atbildīgā persona par Back-end daļu, tehnoloģiju steks|
+|Sergejs|Algoritma veidošana, palīdzība informācijas meklēšanā|
+|Oļegs|Atbildīgā persona par Front-end daļu|
+|Rihards|Konceptu modelis, palīdzība informācijas meklēšanā|
+|Katrīna|Dokumentācija, prezentācijas veidošana, palīdzība informācijas meklēšana|
+|Ieva|Dokumentācija, prezentācijas veidošana, palīdzība informācijas meklēšanā|
+# Plakāts

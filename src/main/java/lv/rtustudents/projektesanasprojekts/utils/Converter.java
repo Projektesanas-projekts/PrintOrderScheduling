@@ -19,6 +19,9 @@ public class Converter {
         order.setSizeY(orderDTO.getSizeY());
         order.setStatus(orderDTO.getStatus());
         order.setNotes(orderDTO.getNotes());
+        order.setCuttingTimePer(orderDTO.getCuttingTimePer());
+        order.setBindingTimePer(orderDTO.getBindingTimePer());
+        order.setCoveringTimePer(orderDTO.getCoveringTimePer());
 
         return order;
     }
@@ -38,6 +41,9 @@ public class Converter {
         orderDTO.setSizeY(order.getSizeY());
         orderDTO.setStatus(order.getStatus());
         orderDTO.setNotes(order.getNotes());
+        orderDTO.setCuttingTimePer(order.getCuttingTimePer());
+        orderDTO.setBindingTimePer(order.getBindingTimePer());
+        orderDTO.setCoveringTimePer(order.getCoveringTimePer());
 
         return orderDTO;
     }

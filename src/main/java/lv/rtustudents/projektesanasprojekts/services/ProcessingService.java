@@ -98,6 +98,8 @@ public class ProcessingService {
 
         for (int i = 0; i < solverSolution.length; i++){
             Order order = orders.get(i);
+            order.setStatus(Constants.STATUS_COMPLETE);
+            orderRepo.save(order);
             solverSolution[i] = solverSolution[i] * order.getAmount();
         }
 

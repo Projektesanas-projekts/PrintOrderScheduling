@@ -41,6 +41,8 @@ REPEAT
    include  machine time in a list
 UNTIL all orders are processed
 REPEAT
+   add constraints to book amounts
+UNTIL all orders are processed
    add constraints to machine time
    add objective function
    adjust goal type and constraints

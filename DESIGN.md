@@ -116,7 +116,9 @@ Pēc mūsu apstrādes ātruma veiktajiem testiem ar dažādu pasūtījumu daudzu
 
 Neskatoties uz to ka bija daudz darba veidojot dažādas funkcionalitātes front-end un back-end, tomēr visgrūtākais bija realizēt maksimizācijas algoritmu, jo bija problēmas sākumā ne tikai ar loģikas izprašanu, bet arī problēmas ar pašu bibliotēku, kas būtiski pagarināja projekta izstrādes gaitu.
 Lai saprastu, kā tas darbojas, mēs paļāvāmies uz ziņu, kas 2013. gadā tika dokumentēta kādā nejaušā ziņojumapmaiņas programmā.
-Tas tika atrasts, pateicoties lietotājam, kurš tolaik rakstīja StackOverflow.# Katra grupas dalībnieka veikums
+Tas tika atrasts, pateicoties lietotājam, kurš tolaik rakstīja StackOverflow.
+
+# Katra grupas dalībnieka veikums
 
 |Dalībnieks|Paveiktais darbs|
 |:---:|:---|

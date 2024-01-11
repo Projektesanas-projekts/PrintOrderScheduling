@@ -52,7 +52,6 @@ public class ProcessingService {
         for (Order order : orders) {
             Float pricePerBook = createPricePerBook(order);
             System.out.println(pricePerBook);
-            order.setStatus(Constants.STATUS_COMPLETE);
             allpricePerBook.add(pricePerBook);
             all_binding_Time.add(order.getBindingTimePer());
             all_covering_Time.add(order.getCoveringTimePer());
@@ -69,8 +68,6 @@ public class ProcessingService {
             double[] coefficients = new double[orderCount];
             Arrays.fill(coefficients,0);
             coefficients[i] = 1;  // Set the coefficient for the current book to 1
-            //log.info(Arrays.toString(coefficients));
-            // Add the constraint for the current book
             constraints.add(new LinearConstraint(coefficients, Relationship.LEQ, order.getAmount()));
         }
 
@@ -98,15 +95,17 @@ public class ProcessingService {
         //double[] getSolution = new double[orderCount];
         double[] solverSolution = solution.getPoint();
 
-        for (int i = 0; i < solverSolution.length; i++){
+        for (int i = 0; i < orders.size(); i++){
             Order order = orders.get(i);
-//            solverSolution[i] = solverSolution[i] * order.getAmount();
             JSONObject obj = (JSONObject) result.get(String.valueOf(order.getId()));
             obj.put("solution", solverSolution[i]);
 
             if (solverSolution[i] > 0) {
+                log.info("IF Solution for order " + order.getId() + ": " + solverSolution[i]);
                 order.setStatus(Constants.STATUS_COMPLETE);
                 orderRepo.save(order);
+            } else {
+                log.info("ELSE Solution for order " + order.getId() + ": " + solverSolution[i]);
             }
         }
 
@@ -139,30 +138,4 @@ public class ProcessingService {
 
         return pricePerBook;
     }
-
-
-
-    /* m  = count of columns
-    for(int j=0; j<m; j++)
-    {
-        double[] v = new double[n*m];
-        for(int i=0; i<n; i++)
-            v[i*n + j] = 1;
-        constraints.add(new LinearConstraint(v, Relationship.LEQ, 1));
-    }
-
-    // n = count of rows
-    for(int i=0; i<n; i++)
-    {
-        double[] v = new double[n*m];
-        for(int j=0; j<m; j++)
-            v[i*n + j] = A[i][j];
-        constraints.add(new LinearConstraint(v, Relationship.LEQ, L));
-    }
-    double[] objectiveCoefficients = new double[n * m];
-    Arrays.fill(objectiveCoefficients, 1.0);
-    LinearObjectiveFunction objective = LinearObjectiveFunction(objectiveCoefficients, 0);
-    LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {orderCount, 5}, 0);*/
-
-
 }

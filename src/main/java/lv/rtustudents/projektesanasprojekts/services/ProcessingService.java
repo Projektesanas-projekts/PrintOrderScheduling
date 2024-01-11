@@ -10,6 +10,7 @@ import org.apache.commons.math3.optim.OptimizationData;
 import org.apache.commons.math3.optim.PointValuePair;
 import org.apache.commons.math3.optim.linear.*;
 import org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class ProcessingService {
         }
 
         Integer orderCount = orders.size();
+        JSONObject result = new JSONObject();
 
         // Define the constraints
         Collection<LinearConstraint> constraints = new ArrayList<>();
@@ -46,8 +48,6 @@ public class ProcessingService {
         Collection<Float> all_binding_Time = new ArrayList<>();
         Collection<Float> all_covering_Time = new ArrayList<>();
         Collection<Float> all_cutting_Time = new ArrayList<>();
-
-        Double[] objectiveFunctionArray = new Double[orderCount];
 
         for (Order order : orders) {
             Float pricePerBook = createPricePerBook(order);
@@ -59,6 +59,8 @@ public class ProcessingService {
             all_cutting_Time.add(order.getCuttingTimePer());
 
             //constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
+
+            result.put(String.valueOf(order.getId()), new JSONObject().put("pricePerBook", pricePerBook).put("solution", -1));
         }
 
         for (int i = 0; i < orders.size(); i++) {
@@ -101,13 +103,17 @@ public class ProcessingService {
             order.setStatus(Constants.STATUS_COMPLETE);
             orderRepo.save(order);
             solverSolution[i] = solverSolution[i] * order.getAmount();
+            JSONObject obj = (JSONObject) result.get(String.valueOf(order.getId()));
+            obj.put("solution", solverSolution[i]);
+
         }
 
         // Print the solution
         log.info("Solution: " + Arrays.toString(solverSolution));
 
         log.info("Processing finished");
-        return Arrays.toString(solverSolution);
+        log.info(result.toString());
+        return result.toString();
     }
 
 

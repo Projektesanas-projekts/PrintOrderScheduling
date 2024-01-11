@@ -90,15 +90,15 @@ B N <= W;
 ## Prasību izpildes kontrolsaraksts
 |Nr.|Lietotāja stāsts|Izpildīts(Jā/Nē)|Komentārs|
 |:--:|--|--|--|
-|1.|Klients vēlas pierakstīties pakalpojuma saņemšanai, jo tad viņš var saņemt gatavu produktu.|||
-|2.|Meistari vēlas saņemt precīzu informāciju par konkrēta pasūtījuma grāmatu drukāšanu, jo grib izpildīt darbu kvalitatīvi un nepārtērēt izmantotos resursus.|||
-|3.|Kompānijas vadītāji vēlas redzēt saprotamā veidā informāciju par pasūtījumiem, jo tad varētu pieņemt vislabākos lēmumus par to izpildi.|||
-|4.|Vadītājam ir nepieciešams saņemt informāciju par plānotajiem drukāšanas darbiem, jo ir nepieciešams saorganizēt iekārtu darbību turpmākam darbam.|||
-|5.|Uzņēmums vēlas izvairīties no "logiem", jo tie var izraisīt zaudējumus.|||
-|6.|Klients vēlas saņemt pasūtījumu nepārsniedzot noteiktu pasūtījuma izpildījuma termiņu, jo tad var bez aizkavējumiem turpināt savus plānus, kuri ir ieplānoti ar grāmatām.|||
-|7.|Uzņēmums vēlas palielināt peļņu, jo tad ir iespēja iegādāties kvalitatīvākus materiālus un tehniku.|||
-|8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|||
-|9.|Privātpersona vēlas publicēt grāmatu, jo vēlas iegūt peļņu.|||
+|1.|Klients vēlas pierakstīties pakalpojuma saņemšanai, jo tad viņš var saņemt gatavu produktu.|Jā||
+|2.|Meistari vēlas saņemt precīzu informāciju par konkrēta pasūtījuma grāmatu drukāšanu, jo grib izpildīt darbu kvalitatīvi un nepārtērēt izmantotos resursus.|Jā||
+|3.|Kompānijas vadītāji vēlas redzēt saprotamā veidā informāciju par pasūtījumiem, jo tad varētu pieņemt vislabākos lēmumus par to izpildi.|Jā||
+|4.|Vadītājam ir nepieciešams saņemt informāciju par plānotajiem drukāšanas darbiem, jo ir nepieciešams saorganizēt iekārtu darbību turpmākam darbam.|Jā|Administrators redz pasūtījumu rindu un var pieņemt lēmumu drukāt vai nedrukāt|
+|5.|Uzņēmums vēlas izvairīties no "logiem", jo tie var izraisīt zaudējumus.|Nē||
+|6.|Klients vēlas saņemt pasūtījumu nepārsniedzot noteiktu pasūtījuma izpildījuma termiņu, jo tad var bez aizkavējumiem turpināt savus plānus, kuri ir ieplānoti ar grāmatām.|Nē||
+|7.|Uzņēmums vēlas palielināt peļņu, jo tad ir iespēja iegādāties kvalitatīvākus materiālus un tehniku.|Jā||
+|8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|Nē||
+|9.|Privātpersona vēlas publicēt grāmatu, jo vēlas iegūt peļņu.|Jā||
 
 # Katra grupas dalībnieka veikums
 |Dalībnieks|Paveiktais darbs|

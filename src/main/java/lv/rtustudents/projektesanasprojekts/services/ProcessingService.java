@@ -61,6 +61,17 @@ public class ProcessingService {
             constraints.add(new LinearConstraint(new double[] {1}, Relationship.LEQ, order.getAmount()));
         }
 
+        /*for (int i = 0; i < orders.size(); i++) {
+            Order order = orders.get(i);
+
+            double[] coefficients = new double[orderCount];
+            Arrays.fill(coefficients,0);
+            coefficients[i] = 1;  // Set the coefficient for the current book to 1
+
+            // Add the constraint for the current book
+            constraints.add(new LinearConstraint(coefficients, Relationship.LEQ, order.getAmount()));
+        }*/
+
 
         double[] all_binding_TimeArray = all_binding_Time.stream().mapToDouble(Float::doubleValue).toArray();
         constraints.add(new LinearConstraint(all_binding_TimeArray, Relationship.LEQ, 960));
@@ -75,7 +86,8 @@ public class ProcessingService {
         LinearObjectiveFunction f = new LinearObjectiveFunction(allpricePerBookArray, 0);
 
 
-        OptimizationData[] optData = new OptimizationData[] {GoalType.MAXIMIZE, f, new LinearConstraintSet(constraints)};
+        OptimizationData[] optData = new OptimizationData[] {GoalType.MAXIMIZE, f, new LinearConstraintSet(constraints), new
+                NonNegativeConstraint(true)};
 
         // Create and run the solver
         SimplexSolver solver = new SimplexSolver();
@@ -87,8 +99,6 @@ public class ProcessingService {
         log.info("Processing finished");
         return Arrays.toString(solution.getPoint());
     }
-
-
 
 
 
@@ -138,33 +148,6 @@ public class ProcessingService {
     Arrays.fill(objectiveCoefficients, 1.0);
     LinearObjectiveFunction objective = LinearObjectiveFunction(objectiveCoefficients, 0);
     LinearObjectiveFunction f = new LinearObjectiveFunction(new double[] {orderCount, 5}, 0);*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

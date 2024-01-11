@@ -26,8 +26,29 @@ Izstrādāt efektīvu pieeju peļņas un efektivitātes maksimizēšanai drukā�
 |7.|Uzņēmums vēlas palielināt peļņu, jo tad ir iespēja iegādāties kvalitatīvākus materiālus un tehniku.|7|
 |8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|8|
 |9.|Vadītājam ir nepieciešams saņemt informāciju par plānotajiem drukāšanas darbiem, jo ir nepieciešams saorganizēt iekārtu darbību turpmākam darbam.|4|
-## 3.2. Algoritms
 
+## 3.2. Algoritms
+### Pseidokods
+```
+MAINPROGRAM
+IF order in queue
+   add all queued orders in list
+ELSE
+   END MAINPROGRAM
+REPEAT 
+   calculate price per book
+   include price in a list
+   include  machine time in a list
+UNTIL all orders are processed
+REPEAT
+   add constraints to machine time
+   add objective function
+   adjust goal type and constraints
+   create the solver
+   calculate the amount of books to print and profit
+   output result
+END MAINPROGRAM
+```
 ## 3.3. Konceptu modelis
 ![svarigakie_koncepti](/images_doc/attels1_updated.png)
 ![konceptu_modelis](/images_doc/Konceptu_modelis_final.png)

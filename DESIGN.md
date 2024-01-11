@@ -89,16 +89,16 @@ B N <= W;
 # 5. Secinājumi
 ## Prasību izpildes kontrolsaraksts
 |Nr.|Lietotāja stāsts|Izpildīts(Jā/Nē)|Komentārs|
-|:--:|--|--|--|
-|1.|Klients vēlas pierakstīties pakalpojuma saņemšanai, jo tad viņš var saņemt gatavu produktu.|Jā||
-|2.|Meistari vēlas saņemt precīzu informāciju par konkrēta pasūtījuma grāmatu drukāšanu, jo grib izpildīt darbu kvalitatīvi un nepārtērēt izmantotos resursus.|Jā||
-|3.|Kompānijas vadītāji vēlas redzēt saprotamā veidā informāciju par pasūtījumiem, jo tad varētu pieņemt vislabākos lēmumus par to izpildi.|Jā||
+|:--:|--|:--:|--|
+|1.|Klients vēlas pierakstīties pakalpojuma saņemšanai, jo tad viņš var saņemt gatavu produktu.|Jā|Iespēja reģistrēties un ielogoties portālā|
+|2.|Meistari vēlas saņemt precīzu informāciju par konkrēta pasūtījuma grāmatu drukāšanu, jo grib izpildīt darbu kvalitatīvi un nepārtērēt izmantotos resursus.|Jā|Tiek saņemta informācija par grāmatu drukas pieprasījumiem|
+|3.|Kompānijas vadītāji vēlas redzēt saprotamā veidā informāciju par pasūtījumiem, jo tad varētu pieņemt vislabākos lēmumus par to izpildi.|Jā|Ir pieejama informācija|
 |4.|Vadītājam ir nepieciešams saņemt informāciju par plānotajiem drukāšanas darbiem, jo ir nepieciešams saorganizēt iekārtu darbību turpmākam darbam.|Jā|Administrators redz pasūtījumu rindu un var pieņemt lēmumu drukāt vai nedrukāt|
-|5.|Uzņēmums vēlas izvairīties no "logiem", jo tie var izraisīt zaudējumus.|Nē||
+|5.|Uzņēmums vēlas izvairīties no "logiem", jo tie var izraisīt zaudējumus.|Jā|Ir iespējams saorganizēt drukāšanu tā lai nebūtu dīkstāves laiks|
 |6.|Klients vēlas saņemt pasūtījumu nepārsniedzot noteiktu pasūtījuma izpildījuma termiņu, jo tad var bez aizkavējumiem turpināt savus plānus, kuri ir ieplānoti ar grāmatām.|Nē||
 |7.|Uzņēmums vēlas palielināt peļņu, jo tad ir iespēja iegādāties kvalitatīvākus materiālus un tehniku.|Jā||
-|8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|Nē||
-|9.|Privātpersona vēlas publicēt grāmatu, jo vēlas iegūt peļņu.|Jā||
+|8.|Lietotājs vēlas valodas izvēles pieejamību mājaslapā, jo viņš nezina, piemēram, latviešu valodu.|Nē|Pašlaik mājaslapa tikai angļu valodā|
+|9.|Privātpersona vēlas publicēt grāmatu, jo vēlas iegūt peļņu.|Jā|Privātpersonām ir pieejami grāmatu drukāšanas pakalpojumi|
 
 # Katra grupas dalībnieka veikums
 |Dalībnieks|Paveiktais darbs|

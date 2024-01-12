@@ -130,3 +130,4 @@ Tas tika atrasts, pateicoties lietotājam, kurš tolaik rakstīja StackOverflow.
 |Katrīna|Dokumentācija, prezentācijas veidošana, palīdzība informācijas meklēšana|
 |Ieva|Dokumentācija, prezentācijas veidošana, palīdzība informācijas meklēšanā|
 # Plakāts
+![plakats](/images_doc/plakats.jpeg)
